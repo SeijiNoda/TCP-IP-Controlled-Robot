@@ -1,0 +1,158 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  basicTimeStep 64
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.24518893861453422 0.9327176692127268 0.264424155325221 1.7154671196074263
+  position 0.8437451666342273 0.4142021686105923 -0.02531254065711698
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation -0.0206354 -0.05 0.0122816
+  floorAppearance Parquetry {
+  }
+  wallHeight 0.05
+}
+DifferentialWheels {
+  translation 0 -0.03 0
+  children [
+    Solid {
+      translation -0.03 1.69749e-07 -4.77911e-13
+      rotation 0.5773522691836299 -0.5773522691836299 0.5773462691808325 2.0944
+      children [
+        Transform {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.807843 0.866667 1
+                metalness 0.5
+              }
+              geometry Cylinder {
+                height 0.003
+                radius 0.02
+              }
+            }
+          ]
+        }
+      ]
+    }
+    Solid {
+      translation 0.03 -2.27713e-07 6.36442e-09
+      rotation 0.5773522691836299 -0.5773522691836299 0.5773462691808325 2.0944
+      children [
+        Transform {
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.807843 0.866667 1
+                metalness 0.5
+              }
+              geometry Cylinder {
+                height 0.003
+                radius 0.02
+              }
+            }
+          ]
+        }
+      ]
+      name "solid(1)"
+    }
+    Solid {
+      children [
+        Transform {
+          children [
+            DEF CORPO_BASE_1 Shape {
+              appearance PBRAppearance {
+                baseColor 1 0 0
+              }
+              geometry Cylinder {
+                height 0.03
+                radius 0.03
+              }
+            }
+          ]
+        }
+      ]
+    }
+    TouchSensor {
+      translation 0 0.009 -0.03
+      rotation 1 0 0 1.5708
+      children [
+        DEF TSENSOR_BASE_1 Shape {
+          appearance PBRAppearance {
+            baseColor 0.952941 1 0.0901961
+            metalness 0.5
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ts1"
+      boundingObject USE TSENSOR_BASE_1
+    }
+    TouchSensor {
+      translation 0 0.00899976 0.03
+      rotation 2.578371025308694e-07 -0.7071072811865461 0.7071062811861484 3.14159
+      children [
+        DEF TSENSOR_BASE_1 Shape {
+          appearance PBRAppearance {
+            baseColor 0.952941 1 0.0901961
+            metalness 0.5
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ts2"
+      boundingObject USE TSENSOR_BASE_1
+    }
+  ]
+  name "rfa1"
+  boundingObject Transform {
+    children [
+      USE CORPO_BASE_1
+    ]
+  }
+  controller "raf1_controller"
+  axleLength 0.06
+  wheelRadius 0.02
+}
+Solid {
+  translation 0 0 0.27
+  children [
+    DEF BOX_OBSTACULE_1 Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation 0 0 -0.15
+  children [
+    DEF BOX_OBSTACULE_1 Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}

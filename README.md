@@ -4,4 +4,4 @@
 ### Webots Robot
 This robot was emulated in th Webots IDE, and demonstrates the connection between an external python socket client and an automated server running localy on the robot.
 ### Python Client GUI
-Simple python socket that uses of PySimpleGUI lib to send commands to the robot's server via socket.
+Simple python socket that uses of [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/) lib to send commands to the robot's server via socket.
